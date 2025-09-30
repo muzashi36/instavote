@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: vote
+  name: vote
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vote
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: vote
+    spec:
+      containers:
+        - image: schoolofdevops/vote:v1
+          name: vote
+          resources:
+            limits:
+              cpu: "0.5"
+              memory: 256Mi
+            requests:
+              cpu: "0.1"
+              memory: 128Mi
