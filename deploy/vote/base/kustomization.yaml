@@ -3,11 +3,3 @@ kind: Kustomization
 resources:
   - deployment.yaml
   - service.yaml
-
-namespace: instavote
-
-configMapGenerator:
-  - name: vote
-    literals:
-      - OPTION_A=Summer
-      - OPTION_B=Winter
